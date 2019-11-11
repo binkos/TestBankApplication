@@ -10,19 +10,17 @@ class MyModel: ViewModel() {
     private var data = MutableLiveData<balloon>()
     var dates:LiveData<balloon> = data
     fun getData(v: View){
-        loadData()
+        changeValue()
         Log.d("loadData","changed")
     }
 
-    private fun loadData(){
-        if (data.value == balloon.comeBackToTheFirst || data.value == null) {
+    private fun changeValue(){
+        if (data.value == balloon.comeBackToTheFirst) {
             data.value = balloon.openSecondActivity
         } else data.value = balloon.comeBackToTheFirst
         Log.d("loadData","${dates.value} changed")
         Log.d("loadData","${dates.hasObservers()}")
     }
-
-
 
     sealed class balloon{
         object openSecondActivity : balloon()

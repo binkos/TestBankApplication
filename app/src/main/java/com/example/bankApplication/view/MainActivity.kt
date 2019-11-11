@@ -15,38 +15,34 @@ import com.example.bankApplication.viewModel.MyModel
 import com.example.bankApplication.viewModel.MyModel.balloon.*
 
 class MainActivity : AppCompatActivity() {
-
+    lateinit var transaction:FragmentTransaction
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         val model: MyModel = ViewModelProviders.of(this).get(MyModel::class.java)
-        val binding:ActivityMainBinding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+        val binding:ActivityMainBinding= DataBindingUtil.setContentView(this,R.layout.activity_main)
         binding.mainModel = model
-        val transaction:FragmentTransaction = supportFragmentManager.beginTransaction()
 
-
+        transaction = supportFragmentManager.beginTransaction()
         transaction.replace(binding.cont.id,MainFragment())
-
-        model.dates.observe(this, Observer { s->
-
-                when (s) {
-                   openSecondActivity -> {
-                       Log.d("","OpenSecondActivity")
-                       transaction.replace(binding.cont.id,SecondFragment())
-                       transaction.commit()
-                    }
-
-                   comeBackToTheFirst -> {
-                       Log.d("","ComeBackToTheFirst")
-                       transaction.replace(binding.cont.id,MainFragment())
-                       transaction.commit()
-                   }
-                }
-        })
-        Log.d("","observed")
-
         transaction.commit()
 
+
+        Log.d("","observed")
+        model.dates.observe(this, Observer { s->
+
+            when (s) {
+                openSecondActivity -> {
+                    Log.d("","OpenSecondActivity")
+                    transaction.replace(binding.cont.id,SecondFragment())
+                }
+
+                comeBackToTheFirst -> {
+                    Log.d("","ComeBackToTheFirst")
+                    transaction.replace(binding.cont.id,MainFragment())
+                }
+            }
+        })
 
 
 
@@ -56,6 +52,7 @@ class MainActivity : AppCompatActivity() {
         super.onPause()
         Log.d("log","OnPause")
     }
+
 
 
 }
