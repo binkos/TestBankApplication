@@ -10,7 +10,6 @@
 
     </data>
 
-
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/cont"
     android:layout_width="match_parent"

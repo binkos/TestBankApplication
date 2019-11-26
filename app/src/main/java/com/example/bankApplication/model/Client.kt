@@ -5,8 +5,8 @@ import androidx.room.PrimaryKey
 
 @Entity
 class Client(
-@PrimaryKey var ID:Long,
-var lastName:String,
+@PrimaryKey(autoGenerate = true) var ID:Long=0,
+var surName:String,
 var firstName:String,
 var secondName:String,
 var serialPass:String,

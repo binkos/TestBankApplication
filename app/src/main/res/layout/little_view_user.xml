@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+        name="Model"
+        type="com.example.bankApplication.viewModel.MyModel"/></data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="14">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="12"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/name"/>
+
+            <TextView
+                android:id="@+id/user_second_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/second_name"/>
+
+            <TextView
+                android:id="@+id/user_salary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/salary"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:contentDescription="red cross"
+            android:src="@drawable/red_cross"/>
+
+    </LinearLayout>
+
+</layout>

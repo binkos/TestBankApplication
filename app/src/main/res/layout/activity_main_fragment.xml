@@ -21,34 +21,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
-        android:text="Registrate new user"
+        android:text="@string/add_new_user"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:onClick="@{model::getData}"
+        android:onClick="@{model::changeValue}"
         />
 
     <Button
         android:id="@+id/show_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show all users"
+        android:text="@string/show_all_users"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registr_button" />
+        app:layout_constraintTop_toBottomOf="@+id/registr_button"
+        android:onClick="@{model::showAll}"
+        />
 
-    <TextView
-        android:id="@+id/text_for_changing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.41" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

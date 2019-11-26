@@ -16,15 +16,12 @@ import com.example.bankApplication.viewModel.MyModel
 
 class MainFragment: Fragment() {
 
-
-        lateinit var binding:ActivityMainFragmentBinding
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding= DataBindingUtil.inflate(inflater,R.layout.activity_main_fragment,container,false)
+        val binding:ActivityMainFragmentBinding= DataBindingUtil.inflate(inflater,R.layout.activity_main_fragment,container,false)
         val model:MyModel = ViewModelProviders.of(requireActivity()).get(MyModel::class.java)
         binding.model = model
         return binding.root

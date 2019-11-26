@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentTransaction
@@ -15,7 +16,6 @@ import com.example.bankApplication.viewModel.MyModel
 import com.example.bankApplication.viewModel.MyModel.balloon.*
 
 class MainActivity : AppCompatActivity() {
-    lateinit var transaction:FragmentTransaction
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -23,9 +23,7 @@ class MainActivity : AppCompatActivity() {
         val binding:ActivityMainBinding= DataBindingUtil.setContentView(this,R.layout.activity_main)
         binding.mainModel = model
 
-        transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(binding.cont.id,MainFragment())
-        transaction.commit()
+        supportFragmentManager.beginTransaction().replace(binding.cont.id,MainFragment()).commit()
 
 
         Log.d("","observed")
@@ -34,18 +32,15 @@ class MainActivity : AppCompatActivity() {
             when (s) {
                 openSecondActivity -> {
                     Log.d("","OpenSecondActivity")
-                    transaction.replace(binding.cont.id,SecondFragment())
+                    supportFragmentManager.beginTransaction().replace(binding.cont.id,SecondFragment()).commit()
                 }
 
                 comeBackToTheFirst -> {
                     Log.d("","ComeBackToTheFirst")
-                    transaction.replace(binding.cont.id,MainFragment())
+                    supportFragmentManager.beginTransaction().replace(binding.cont.id,MainFragment()).commit()
                 }
             }
         })
-
-
-
     }
 
     override fun onPause() {
@@ -53,6 +48,9 @@ class MainActivity : AppCompatActivity() {
         Log.d("log","OnPause")
     }
 
-
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("log","OnDestroy")
+    }
 
 }
