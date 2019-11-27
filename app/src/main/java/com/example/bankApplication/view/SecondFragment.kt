@@ -25,7 +25,7 @@ class SecondFragment: Fragment() {
         val binding: ActivityMain1Binding = DataBindingUtil.inflate(inflater,R.layout.activity_main_1,container,false)
         model= ViewModelProviders.of(requireActivity()).get(MyModel::class.java)
         binding.model = model
-        return binding.root;
+        return binding.root
     }
 
 
@@ -132,7 +132,7 @@ class SecondFragment: Fragment() {
         return true
     }
     private fun isValid():Boolean{
-        var validatiobBoolean:Int = 0
+        var validatiobBoolean = 0
 
         if (!checkCity()) ++validatiobBoolean
         if (!checkDateOfBirth()) ++validatiobBoolean
