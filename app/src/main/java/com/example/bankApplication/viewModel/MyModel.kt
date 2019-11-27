@@ -17,14 +17,14 @@ class MyModel: ViewModel() {
     var dates:LiveData<balloon> = data
     private val ioScope = CoroutineScope(Dispatchers.IO)
 
-    fun viewChange(){
+    private fun viewChange(){
         if (data.value == balloon.comeBackToTheFirst||data.value ==null) {
             data.value = balloon.openSecondActivity
         } else if (data.value == balloon.openSecondActivity)
             data.value = balloon.comeBackToTheFirst
     }
 
-    fun viewChange(v:View){
+    private fun viewChange(v:View){
     when(v.id){
         R.id.registr_button->data.value = balloon.openSecondActivity
         R.id.show_button->data.value = balloon.showAllUsers
