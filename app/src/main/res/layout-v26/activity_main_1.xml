@@ -39,8 +39,7 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:hint="@string/surname"
-                    android:autofillHints="@string/surname"
-                    tools:targetApi="o" />
+                    />
 
                 <EditText
                     android:id="@+id/FirstName"
@@ -59,8 +58,7 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:hint="@string/second_name"
-                    android:autofillHints="@string/second_name"
-                    tools:targetApi="o" />
+                    android:autofillHints="@string/second_name" />
 
                 <EditText
                     android:id="@+id/Date_Of_Birthday"
@@ -68,9 +66,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="@string/date_of_birthday"
-                    android:autofillHints="@string/date_of_birthday"
-                    tools:targetApi="o"
-                    android:inputType="date" />
+                     />
 
                 <EditText
                     android:id="@+id/Number_passport"
@@ -78,9 +74,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="@string/passport"
-                    android:autofillHints="@string/passport"
-                    tools:targetApi="o"
-                    android:inputType="number" />
+                     />
 
                 <EditText
                     android:id="@+id/Who_gave"
@@ -211,7 +205,6 @@
                 android:layout_weight="1"
                 android:text="@string/back"
                 android:onClick="@{Model::changeValue}"
-
                 />
         </LinearLayout>
     </LinearLayout>

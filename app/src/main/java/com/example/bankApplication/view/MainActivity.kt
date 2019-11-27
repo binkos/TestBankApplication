@@ -39,6 +39,11 @@ class MainActivity : AppCompatActivity() {
                     Log.d("","ComeBackToTheFirst")
                     supportFragmentManager.beginTransaction().replace(binding.cont.id,MainFragment()).commit()
                 }
+
+                showAllUsers -> {
+                    Log.d("","ShowAllUsers")
+                    supportFragmentManager.beginTransaction().replace(binding.cont.id,ListUsersFragment()).commit()
+                }
             }
         })
     }
