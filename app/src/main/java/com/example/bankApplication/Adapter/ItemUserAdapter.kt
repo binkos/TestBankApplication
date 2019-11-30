@@ -9,7 +9,13 @@ import com.example.bankApplication.R
 import com.example.bankApplication.model.Client
 import kotlinx.android.synthetic.main.little_view_user.view.*
 
-class ItemUserAdapter(val users:ArrayList<Client>,val context: Context):RecyclerView.Adapter<ItemUserAdapter.UsersViewHolder>() {
+class ItemUserAdapter(private val users:ArrayList<Client>, private val context: Context):RecyclerView.Adapter<ItemUserAdapter.UsersViewHolder>() {
+    lateinit var listener:OnItemClickListener
+
+    interface OnItemClickListener{
+        fun onItemClick(view: View?, position: Int)
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UsersViewHolder {
         return UsersViewHolder(LayoutInflater.from(context).inflate(R.layout.little_view_user,parent,false))
     }

@@ -17,6 +17,7 @@ import com.example.bankApplication.databinding.ListUsersBinding
 import com.example.bankApplication.viewModel.MyModel
 import kotlinx.android.synthetic.main.list_users.*
 import kotlinx.android.synthetic.main.list_users.view.*
+import kotlinx.android.synthetic.main.little_view_user.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -24,7 +25,8 @@ import kotlinx.coroutines.withContext
 import java.util.zip.Inflater
 
 class ListUsersFragment: Fragment() {
-lateinit var viewModel:MyModel
+
+    lateinit var viewModel:MyModel
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -38,15 +40,15 @@ lateinit var viewModel:MyModel
         GlobalScope.launch {
             val arrayList = viewModel.showAll()
             withContext(Dispatchers.Main){
-                rec_list_users.adapter = ItemUserAdapter(arrayList,this@ListUsersFragment.context as Context)
-                rec_list_users.layoutManager=LinearLayoutManager(this@ListUsersFragment.context)
+                val adapter = ItemUserAdapter(arrayList,this@ListUsersFragment.context as Context)
+
+                rec_list_users.adapter = adapter
+                rec_list_users.layoutManager
             }
         }
-
         return binding.root
        }
 
 
+    }
 
-
-}

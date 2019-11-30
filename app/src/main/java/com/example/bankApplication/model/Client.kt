@@ -5,26 +5,29 @@ import androidx.room.PrimaryKey
 
 @Entity
 class Client(
-@PrimaryKey(autoGenerate = true) var ID:Long=0,
 var surName:String,
 var firstName:String,
 var secondName:String,
+var dateOfBirth:Long,
 var serialPass:String,
 var numberPass:Long,
 var authority:String,
-var dateOfIssue:String,
-var birthDay:String,
-var address:String,
-var salary:Long,
+var dateOfIssue:Long,
+var placeOfBirth:String,
+var cityFact:String,
+var addressFact:String,
 var phone:String,
 var mobile: String,
-var email: String,
-var city:String,
-var disab:String,
+var placeOfWork: String,
+var positionOnJob:String,
+var cityRegistr:String,
 var marital:String,
-var nation:String,
-var dutybound:String,
-var retiree:String
+var citizenship:String,
+var disabled:String,
+var retiree:Boolean,
+var salary:Int,
+@PrimaryKey(autoGenerate = true) var ID:Long=0,
+var identification:String
 ){
     companion object
 }

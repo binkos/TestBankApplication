@@ -62,15 +62,36 @@
                     android:autofillHints="@string/second_name"
                     tools:targetApi="o" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Date_Of_Birthday"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="@string/choose_your_birthday"
+                        android:textSize="17sp"/>
+                    
+                    <Button
+                        android:id="@+id/date_of_birthday_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/set_time" />
+                </LinearLayout>
+
                 <EditText
-                    android:id="@+id/Date_Of_Birthday"
+                    android:id="@+id/series_passport"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="@string/date_of_birthday"
-                    android:autofillHints="@string/date_of_birthday"
-                    tools:targetApi="o"
-                    android:inputType="date" />
+                    android:inputType="text"
+                    android:hint="@string/series_of_passport"
+                    android:importantForAutofill="no"
+                    tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/Number_passport"
@@ -89,24 +110,39 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:hint="@string/who_gave_passport"
-                     />
+                    android:importantForAutofill="no" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/time_giving"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="@string/choose_your_time_of_getting_passport"
+                        android:textSize="17sp"
+                        />
+
+                    <Button
+                        android:id="@+id/set_time_giving"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/set_time" />
+
+                </LinearLayout>
 
                 <EditText
                     android:id="@+id/identification"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="textPersonName"
+                    android:inputType="text"
                     android:hint="@string/identification"
-                     />
-
-                <EditText
-                    android:id="@+id/place_of_birth"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint="@string/place_of_birth" />
+                    android:importantForAutofill="no" />
 
                 <EditText
                     android:id="@+id/city"
@@ -114,7 +150,17 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:hint="@string/city_of_birth" />
+                    android:hint="@string/city_of_living"
+                    android:importantForAutofill="no" />
+
+                <EditText
+                    android:id="@+id/address_of_living"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="@string/address_of_living"
+                    android:importantForAutofill="no" />
 
                 <EditText
                     android:id="@+id/address"
@@ -122,7 +168,8 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:hint="@string/address" />
+                    android:hint="@string/address"
+                    android:importantForAutofill="no" />
 
                 <EditText
                     android:id="@+id/num_of_home"
@@ -130,7 +177,9 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:hint="@string/number_of_home" />
+                    android:hint="@string/number_of_home"
+                    android:autofillHints="0"
+                    tools:targetApi="o" />
 
                 <EditText
                     android:id="@+id/phone"
@@ -138,55 +187,78 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="phone"
-                    android:hint="@string/phone_number" />
+                    android:hint="@string/phone_number"
+                    android:autofillHints="0"
+                    tools:targetApi="o" />
+
 
                 <EditText
                     android:id="@+id/mail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint="@string/e_mail" />
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/e_mail"
+                    android:autofillHints="Unknown"
+                    tools:targetApi="o" />
 
                 <EditText
-                    android:id="@+id/city_live"
+                    android:id="@+id/job"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/job"
+                    android:inputType="text"
+                    android:autofillHints="Unknown"
+                    tools:targetApi="o" />
+
+                <EditText
+                    android:id="@+id/position"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:hint="@string/city" />
+                    android:hint="@string/position"
+                    android:autofillHints="Unknown"
+                    tools:targetApi="o" />
 
-                <EditText
+                <Spinner
+                    android:id="@+id/spinner_cities"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Spinner
                     android:id="@+id/family_status"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="textPersonName"
                     android:hint="@string/family_status" />
 
-                <EditText
-                    android:id="@+id/nationality"
+                <Spinner
+                    android:id="@+id/citizenship"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint="@string/nationality" />
+                    android:inputType="text"
+                    android:hint="@string/nationality"
+                    />
 
-                <EditText
-                    android:id="@+id/years"
+                <Spinner
+                    android:id="@+id/disabled"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:hint="@string/years" />
+                    />
 
                 <EditText
                     android:id="@+id/salary"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint="@string/salary" />
+                    android:hint="@string/salary"
+                    android:importantForAutofill="no"
+                    android:inputType="number" />
             </LinearLayout>
         </ScrollView>
 
@@ -202,7 +274,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/add"
-                />
+                tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/backBtn"
@@ -211,7 +283,7 @@
                 android:layout_weight="1"
                 android:text="@string/back"
                 android:onClick="@{Model::changeValue}"
-                />
+                tools:ignore="ButtonStyle" />
         </LinearLayout>
     </LinearLayout>
 </layout>

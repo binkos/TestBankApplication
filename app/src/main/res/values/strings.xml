@@ -22,7 +22,17 @@
     <string name="city">City*</string>
     <string name="city_of_birth">City of birth*</string>
     <string name="family_status">Family status*</string>
-    <string name="nationality">Nationality*</string>
+    <string name="nationality">Citizenship*</string>
     <string name="years">Years</string>
     <string name="salary">Salary</string>
+    <string name="serial_passport">Serial Passport</string>
+    <string name="job">place of job</string>
+    <string name="position">Position</string>
+    <string name="place_of_living">Place of living</string>
+    <string name="address_of_living">Address of living*</string>
+    <string name="set_time">Set time</string>
+    <string name="series_of_passport">Series of passport*</string>
+    <string name="choose_your_birthday">Choose your birthday*</string>
+    <string name="choose_your_time_of_getting_passport">Choose your time of getting passport*</string>
+    <string name="red_cross">red cross</string>
 </resources>

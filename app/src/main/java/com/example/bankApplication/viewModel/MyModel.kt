@@ -56,7 +56,7 @@ class MyModel: ViewModel() {
         }
     }
 
-suspend fun showAll():ArrayList<Client>{
+    suspend fun showAll():ArrayList<Client>{
         var users: ArrayList<Client> = ArrayList()
         Log.d("MyLog","size of users list ${users.size}")
 
@@ -66,8 +66,5 @@ suspend fun showAll():ArrayList<Client>{
         withContext(Dispatchers.Main){return@withContext users;}
     }.await()
 }
-
-
-
 
 }
