@@ -7,10 +7,13 @@
         type="com.example.bankApplication.viewModel.MyModel"/></data>
 
     <LinearLayout
+        android:id="@+id/user_linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="14">
+        android:weightSum="14"
+        android:layout_marginBottom="5dp"
+        >
 
         <LinearLayout
             android:id="@+id/lin_lay_list"
